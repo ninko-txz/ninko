@@ -1,0 +1,45 @@
+body {
+    min-height: 100vh;
+    position: relative;
+    background-color: #fafafa;
+    margin: 0;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+nav {
+    display: flex;
+    border-bottom: 0.01rem solid#555555;
+    padding: 0.5rem;
+}
+
+.nav-ul {
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-li::marker {
+    content: none;
+}
+
+main {
+    padding: 1rem 0.5rem;
+}
+
+footer {
+    border-top: 0.01rem solid#555555;
+    padding: 0.5rem;
+}
+
+.footer-p {
+    margin: 0.2rem 0;
+    font-size: 0.9rem;
+}

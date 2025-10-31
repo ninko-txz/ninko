@@ -1,0 +1,8 @@
+# nodejs
+/node_modules
+
+# 11ty
+/_site
+
+# ninko
+/img

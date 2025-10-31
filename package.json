@@ -1,0 +1,26 @@
+{
+    "name": "ninko",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "忍狐のホームページです。",
+    "scripts": {
+        "serve": "npx @11ty/eleventy --serve",
+        "build": "npx @11ty/eleventy"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ninko-txz/ninko.git"
+    },
+    "author": "ninko",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ninko-txz/ninko/issues"
+    },
+    "homepage": "https://github.com/ninko-txz/ninko#readme",
+    "devDependencies": {
+        "@11ty/eleventy": "^3.1.2",
+        "clean-css": "^5.3.3",
+        "html-minifier-terser": "^7.2.0",
+        "terser": "^5.44.0"
+    }
+}

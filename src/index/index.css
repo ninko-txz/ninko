@@ -1,0 +1,17 @@
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.welcome {
+    padding: 0 0.5rem;
+}
+
+h2 {
+    margin: 0 0 1rem 0;
+}
+
+.quick-notes-ul {
+    padding-left: 1.5rem;
+}

@@ -1,0 +1,56 @@
+img {
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.image-ul {
+    display: flex;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.image-li::marker {
+    content: none;
+}
+
+.image-li {
+    line-height: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100%;
+    background: rgb(0, 0, 0, 0.9);
+    color: #ffffff;
+}
+
+.modal-img {
+    margin-top: 0.5rem;
+    object-fit: contain;
+    max-width: calc(100% - 0.5rem);
+    max-height: calc(100% - 1rem);
+}
+
+th {
+    width: 4rem;
+    text-align: left;
+}
+
+.hidden {
+    display: none;
+}
+
+table {
+    padding: 1rem;
+}
