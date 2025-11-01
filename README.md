@@ -1,24 +1,37 @@
 # 忍狐
 
-忍狐のホームページです。[ninko.neocities.org](https://ninko.neocities.org) で公開しています。
+[ninko.neocities.org](https://ninko.neocities.org) で公開中の個人サイトです。
 
-## 開発環境構築手順
+## 開発環境
 
 ```
+# インストール
 $ git clone https://github.com/ninko-txz/ninko.git
 $ cd ninko
-$ npm init
+$ npm install
+
+# 開発用サーバー起動
 $ npm run serve
+
+# 動作確認
+http://localhost:8080
 ```
 
-and open http://localhost:8080
-
-## Deploy
+## Neocities との同期
 
 ```
-$ NEO_API_KEY=xxxxxxxxxx ./deploy.sh
+# 環境構築
+$ pip install -r requirements.txt
+$ export NEOCITIES_API_KEY=xxxxxxxxxx
+
+# 同期
+$ ./neocities.py push
+
+# 同期状態確認
+$ ./neocities.py status
 ```
 
 ## 備考
 
 -   画像ファイル(/img 以下)はリポジトリに含まれていません。
+-   neocities 側に空のディレクトリが残ることがあります。(NeocitiesAPI の仕様上ディレクトリに対する削除操作が出来ないため)
