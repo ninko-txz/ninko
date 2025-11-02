@@ -1,27 +1,28 @@
 'use strict';
 
+const modal = document.querySelector('.modal');
+const modalImage = document.querySelector('.modal-img');
+const modalDate = document.querySelector('.modal-date');
+const modalTitle = document.querySelector('.modal-title');
+const modalDim = document.querySelector('.modal-dim');
+const modalApp = document.querySelector('.modal-app');
+const modalCat = document.querySelector('.modal-cat');
+
+modal.addEventListener('touchmove', (ev) => {
+    ev.preventDefault();
+});
+
+modal.addEventListener('wheel', (ev) => {
+    ev.preventDefault();
+});
+
+modal.addEventListener('click', () => {
+    modal.classList.add('hidden');
+});
+
 (async () => {
-    const artworks = await (await fetch('/gallery/artworks.json')).json();
-
-    const modal = document.querySelector('.modal');
-    const modalImage = document.querySelector('.modal-img');
-    const modalDate = document.querySelector('.modal-date');
-    const modalTitle = document.querySelector('.modal-title');
-    const modalDim = document.querySelector('.modal-dim');
-    const modalApp = document.querySelector('.modal-app');
-    const modalCat = document.querySelector('.modal-cat');
-
-    modal.addEventListener('touchmove', (ev) => {
-        ev.preventDefault();
-    });
-
-    modal.addEventListener('wheel', (ev) => {
-        ev.preventDefault();
-    });
-
-    modal.addEventListener('click', () => {
-        modal.classList.add('hidden');
-    });
+    const res = await fetch('/gallery/artworks.json');
+    const artworks = await res.json();
 
     document.querySelectorAll('.artwork').forEach((art) => {
         art.addEventListener('click', function () {
