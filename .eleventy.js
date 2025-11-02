@@ -10,7 +10,12 @@ export default (config) => {
     config.addPassthroughCopy('src/favicon.ico');
 
     config.addShortcode('pkg', () => require('../package.json'));
-    config.addShortcode('now', () => new Date().toUTCString());
+    config.addShortcode('now', () =>
+        new Date()
+            .toISOString()
+            .replace('T', ' ')
+            .replace(/\.\d+Z$/, ' GMT')
+    );
 
     config.addFilter('jsonify', (items) => {
         const excludes = ['eleventyComputed', 'eleventy', 'page', 'collections', 'pkg', 'permalink'];
