@@ -43,27 +43,20 @@ export default (config) => {
     config.addTemplateFormats('css');
     config.addExtension('css', {
         outputFileExtension: 'css',
-        compile: async (inputContent) => async () => inputContent,
-    });
-    config.addTransform('cleancss', function (content) {
-        if ((this.page.outputPath || '').endsWith('.css')) {
-            return new CleanCSS().minify(content).styles;
-        }
-        return content;
+        compile: async (inputContent) => {
+            const outputContent = new CleanCSS().minify(inputContent).styles;
+            return async () => outputContent;
+        },
     });
 
     // JS圧縮
     config.addTemplateFormats('js');
     config.addExtension('js', {
         outputFileExtension: 'js',
-        compile: async (inputContent) => async () => inputContent,
-    });
-    config.addTransform('terser', async function (content) {
-        if ((this.page.outputPath || '').endsWith('.js')) {
-            const minified = await minify(content);
-            return minified.code;
-        }
-        return content;
+        compile: async (inputContent) => {
+            const outputContent = (await minify(inputContent)).code;
+            return async () => outputContent;
+        },
     });
 };
 
