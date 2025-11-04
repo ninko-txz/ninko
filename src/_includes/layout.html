@@ -7,6 +7,9 @@
         <link rel="stylesheet" href="/{{ name }}/{{ name }}.css" />
         <script src="/global.js" defer></script>
         <script src="/{{ name }}/{{ name }}.js" defer></script>
+        {% if env.isProduction %}
+        <script src="https://ninko.pythonanywhere.com/{{ name }}/neostat.js" defer></script>
+        {% endif %}
         <title>忍狐</title>
     </head>
     <body>

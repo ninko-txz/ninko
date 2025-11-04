@@ -24,11 +24,11 @@ http://localhost:8080
 $ pip install -r requirements.txt
 $ export NEOCITIES_API_KEY=xxxxxxxxxx
 
-# 同期
-$ ./neocities.py push
-
 # 同期状態確認
-$ ./neocities.py status
+$ npm run status
+
+# 同期
+$ npm run push
 ```
 
 ## 備考

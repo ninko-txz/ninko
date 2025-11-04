@@ -17,6 +17,13 @@ export default (config) => {
             .replace(/\.\d+Z$/, ' GMT')
     );
 
+    config.addGlobalData('env', () => {
+        return {
+            isDevelopment: process.env.NODE_ENV == 'development',
+            isProduction: process.env.NODE_ENV == 'production',
+        };
+    });
+
     config.addFilter('jsonify', (items) => {
         const excludes = ['eleventyComputed', 'eleventy', 'page', 'collections', 'pkg', 'permalink'];
         const payload = items.map((item) => item.data).map((data) => omit(data, excludes));

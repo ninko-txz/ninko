@@ -4,8 +4,10 @@
     "type": "module",
     "description": "忍狐のホームページです。",
     "scripts": {
-        "serve": "npx @11ty/eleventy --serve",
-        "build": "npx @11ty/eleventy"
+        "serve": "NODE_ENV=development npx @11ty/eleventy --serve",
+        "build": "NODE_ENV=production npx @11ty/eleventy",
+        "status": "npm run build && ./neocities.py status",
+        "push": "npm run build && ./neocities.py push"
     },
     "repository": {
         "type": "git",
