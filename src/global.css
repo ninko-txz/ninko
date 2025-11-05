@@ -1,8 +1,14 @@
 body {
     min-height: 100vh;
     position: relative;
-    background-color: #fafafa;
     margin: 0;
+    color: #44422e;
+    background: url('/img/hemp.webp');
+}
+
+a,
+a:link {
+    color: #223a70;
 }
 
 h1 {
@@ -15,7 +21,7 @@ h2 {
 
 nav {
     display: flex;
-    border-bottom: 0.01rem solid#555555;
+    border-bottom: 0.01rem solid #44422e;
     padding: 0.5rem;
 }
 
@@ -32,10 +38,11 @@ nav {
 
 main {
     padding: 1rem 0.5rem;
+    background: rgb(255, 255, 255, 0.8);
 }
 
 footer {
-    border-top: 0.01rem solid#555555;
+    border-top: 0.01rem solid #44422e;
     padding: 0.5rem;
 }
 

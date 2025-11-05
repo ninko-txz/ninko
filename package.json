@@ -1,11 +1,11 @@
 {
     "name": "ninko",
-    "version": "1.1.2",
+    "version": "1.2.0",
     "type": "module",
     "description": "忍狐のホームページです。",
     "scripts": {
         "serve": "NODE_ENV=development npx @11ty/eleventy --serve",
-        "build": "NODE_ENV=production npx @11ty/eleventy",
+        "build": "rm -fr _site && NODE_ENV=production npx @11ty/eleventy",
         "status": "npm run build && ./neocities.py status",
         "push": "npm run build && ./neocities.py push"
     },
