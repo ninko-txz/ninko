@@ -10,14 +10,6 @@ a,
 a:link {
     color: #223a70;
     text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.nav-a,
-.nav-a:link {
-    color: #ccc4a2;
-    text-decoration: none;
-    font-weight: bold;
 }
 
 h1 {
@@ -29,21 +21,32 @@ h2 {
 }
 
 nav {
-    display: flex;
     border-bottom: 0.01rem solid #ccc4a2;
-    padding: 0.5rem;
-    background-color: #29281f;
+    padding: 0.5rem 0 0.3rem 0;
+    background: rgb(41, 40, 31, 0.85);
 }
 
 .nav-ul {
     display: flex;
     gap: 1rem;
     margin: 0;
-    padding: 0;
+    padding: 0 0.5rem;
 }
 
 .nav-li::marker {
     content: none;
+}
+
+.nav-a,
+.nav-a:link {
+    color: #ccc4a2;
+    text-decoration: none;
+}
+
+hr {
+    border: 0;
+    border-bottom: 1px solid #ccc4a2;
+    margin: 0.2rem 0 0 0;
 }
 
 main {
