@@ -50,10 +50,8 @@ th {
     display: none;
 }
 
-.image-info {
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
+table {
+    flex: 0 1 20rem;
     margin: 0.5rem 0.25rem;
     padding: 0.75rem;
     border-radius: 1rem;
