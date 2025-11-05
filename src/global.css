@@ -9,6 +9,15 @@ body {
 a,
 a:link {
     color: #223a70;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.nav-a,
+.nav-a:link {
+    color: #ccc4a2;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 h1 {
@@ -21,8 +30,9 @@ h2 {
 
 nav {
     display: flex;
-    border-bottom: 0.01rem solid #44422e;
+    border-bottom: 0.01rem solid #ccc4a2;
     padding: 0.5rem;
+    background-color: #29281f;
 }
 
 .nav-ul {
@@ -42,7 +52,7 @@ main {
 }
 
 footer {
-    border-top: 0.01rem solid #44422e;
+    border-top: 0.01rem solid #ccc4a2;
     padding: 0.5rem;
 }
 
