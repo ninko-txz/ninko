@@ -2,7 +2,7 @@ body {
     min-height: 100vh;
     position: relative;
     margin: 0;
-    color: #44422e;
+    color: #4f4f2f;
     background: url('/img/hemp.webp');
 }
 
@@ -23,7 +23,7 @@ h2 {
 nav {
     border-bottom: 0.01rem solid #ccc4a2;
     padding: 0.5rem 0 0.3rem 0;
-    background: rgb(41, 40, 31, 0.85);
+    background: rgb(38, 37, 29, 0.8);
 }
 
 .nav-ul {
