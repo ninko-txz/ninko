@@ -1,0 +1,12 @@
+---
+layout: layout.html
+---
+
+<ul class="post-ul">
+    {%- for post in collections.posts reversed -%}
+    <li class="post-li">
+        <h1 class="post-date">{{ post.data.date }}</h1>
+        <p class="post-text">{{ post.data.text }}</p>
+    </li>
+    {%- endfor -%}
+</ul>
