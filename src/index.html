@@ -20,10 +20,15 @@ layout: layout.html
 </section>
 
 <section>
-    <h2>Updates</h2>
-    <ul class="updates-ul">
-        <li>2025-11-06 — v1.2.0: Added background image</li>
-        <li>2025-11-02 — v1.1.0: Added social media links</li>
-        <li>2025-11-01 — v1.0.0: Website launched</li>
-    </ul>
+    {%- for art in collections.artworks reversed -%} {% if forloop.index0 == 0 %}
+    <h2>Latest art<small class="latest-date">({{ art.data.date }})</small></h2>
+    <img class="artwork" src="/img/{{ art.data.filename }}" width="200" height="250" />
+    {% endif %} {%- endfor -%}
+</section>
+
+<section>
+    {%- for post in collections.posts reversed -%} {% if forloop.index0 == 0 %}
+    <h2>Latest blog<small class="latest-date">({{ post.data.date }})</small></h2>
+    <p class="post-text">{{ post.data.text }}</p>
+    {% endif %} {%- endfor -%}
 </section>
