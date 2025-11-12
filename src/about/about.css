@@ -1,9 +1,17 @@
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-content: flex-start;
+}
+
 section {
     padding-bottom: 1rem;
+    min-width: 16rem;
 }
 
 h1 {
-    margin: 0.5rem 0;
+    margin: 0 0 0.5rem 0;
     font-size: 1.5rem;
 }
 
