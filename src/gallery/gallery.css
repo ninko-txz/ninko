@@ -1,3 +1,9 @@
+@media screen and (max-width: 768px) {
+    main {
+        padding: 0.25rem;
+    }
+}
+
 img {
     border-radius: 1rem;
     border: 0.01px solid rgb(204, 196, 162, 0.3);
