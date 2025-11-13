@@ -2,33 +2,38 @@
 layout: layout.html
 ---
 
-<section>
-    <h1>Welcome!</h1>
-    <p class="welcome">
-        Thank you for visiting my site.<br />
-        This is where I share my drawings and blog. <br />
-        Please feel free to check back once in a while.
-    </p>
+<section class="col">
+    <section>
+        <h1>Welcome!</h1>
+        <p class="welcome">
+            Thank you for visiting my site.<br />
+            This is where I share my drawings and blog. <br />
+            Please feel free to check back once in a while.
+        </p>
+    </section>
+
+    <section>
+        <h2>Notes</h2>
+        <ul class="notes-ul">
+            <li class="note-li">My English isn’t perfect since I’m still learning.</li>
+            <li class="note-li">This site contains some mildly adult content.</li>
+            <li class="note-li">Unauthorized reproduction and scraping prohibited.</li>
+        </ul>
+    </section>
+
+    <section>
+        {%- for post in collections.posts reversed -%} {% if forloop.index0 == 0 %}
+        <h2>Latest blog<small class="latest-date">({{ post.data.date }})</small></h2>
+        <p class="post-text">{{ post.data.text }}</p>
+        {% endif %} {%- endfor -%}
+    </section>
 </section>
 
-<section>
-    <h2>Notes</h2>
-    <ul class="notes-ul">
-        <li>My English isn’t perfect since I’m still learning—thanks for your understanding!</li>
-        <li>This site contains some mildly adult content.</li>
-    </ul>
-</section>
-
-<section>
-    {%- for art in collections.artworks reversed -%} {% if forloop.index0 == 0 %}
-    <h2>Latest art<small class="latest-date">({{ art.data.date }})</small></h2>
-    <img class="artwork" src="/img/{{ art.data.filename }}" width="200" height="250" />
-    {% endif %} {%- endfor -%}
-</section>
-
-<section>
-    {%- for post in collections.posts reversed -%} {% if forloop.index0 == 0 %}
-    <h2>Latest blog<small class="latest-date">({{ post.data.date }})</small></h2>
-    <p class="post-text">{{ post.data.text }}</p>
-    {% endif %} {%- endfor -%}
+<section class="col">
+    <section>
+        {%- for art in collections.artworks reversed -%} {% if forloop.index0 == 0 %}
+        <h2>Latest artwork<small class="latest-date">({{ art.data.date }})</small></h2>
+        <img class="artwork" src="/img/{{ art.data.filename }}" width="400" height="500" />
+        {% endif %} {%- endfor -%}
+    </section>
 </section>

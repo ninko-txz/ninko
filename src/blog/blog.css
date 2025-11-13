@@ -3,6 +3,10 @@
     padding: 0 0 0 1rem;
 }
 
+.post-li::marker {
+    content: '+ ';
+}
+
 .post-date {
     margin: 0.5rem 0;
     font-size: 1.2rem;

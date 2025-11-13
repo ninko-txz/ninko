@@ -1,7 +1,13 @@
 main {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 1rem;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .welcome {
@@ -15,12 +21,16 @@ h1 {
 }
 
 h2 {
-    margin: 0.5rem 0;
+    margin: 0 0 0.5rem 0;
 }
 
 .notes-ul {
     margin: 0;
-    padding: 0 0 0 1.5rem;
+    padding: 0 0 0 1rem;
+}
+
+.note-li::marker {
+    content: '- ';
 }
 
 .latest-date {
@@ -29,12 +39,12 @@ h2 {
 }
 
 .artwork {
-    margin: 0 0 0 1rem;
+    margin: 0 0 0 0.5rem;
     padding: 0;
     border-radius: 1rem;
 }
 
 .post-text {
-    margin: 0 0 1rem 1rem;
+    margin: 0 0 1rem 0.5rem;
     padding: 0;
 }

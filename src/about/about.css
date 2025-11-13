@@ -29,5 +29,9 @@ th {
     flex-direction: column;
     gap: 0.5rem;
     margin: 0;
-    padding: 0 0 0 2rem;
+    padding: 0 0 0 1.5rem;
+}
+
+.link-li::marker {
+    content: '- ';
 }
