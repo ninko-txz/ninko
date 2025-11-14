@@ -7,7 +7,7 @@ layout: layout.html
         <h1>Welcome!</h1>
         <p class="welcome">
             Thank you for visiting my site.<br />
-            This is where I share my drawings and blog. <br />
+            This is where I share my drawings and diary. <br />
             Please feel free to check back once in a while.
         </p>
     </section>
@@ -23,7 +23,7 @@ layout: layout.html
 
     <section>
         {%- for post in collections.posts reversed -%} {% if forloop.index0 == 0 %}
-        <h2>Latest blog<small class="latest-date">({{ post.data.date }})</small></h2>
+        <h2>Latest diary<small class="latest-date">({{ post.data.date }})</small></h2>
         <p class="post-text">{{ post.data.text }}</p>
         <img src="/img/{{ post.data.image }}" width="260" height="260" />
         {% endif %} {%- endfor -%}

@@ -11,7 +11,7 @@ main {
 }
 
 .post-li::marker {
-    content: '> ';
+    content: '';
 }
 
 .post-date {
@@ -20,5 +20,9 @@ main {
 }
 
 .post-text {
-    margin: 0;
+    margin: 0 0 0.5rem 0.5rem;
+}
+
+.post-image {
+    margin: 0 0 0 0.5rem;
 }
