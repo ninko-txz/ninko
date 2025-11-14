@@ -2,7 +2,7 @@
 layout: layout.html
 ---
 
-<section class="col">
+<div class="col">
     <section>
         <h1>Welcome!</h1>
         <p class="welcome">
@@ -15,9 +15,9 @@ layout: layout.html
     <section>
         <h2>Notes</h2>
         <ul class="notes-ul">
-            <li class="note-li">My English isn’t perfect since I’m still learning.</li>
-            <li class="note-li">This site contains some mildly adult content.</li>
             <li class="note-li">Unauthorized reproduction and scraping prohibited.</li>
+            <li class="note-li">This site contains some mildly adult content.</li>
+            <li class="note-li">My English isn’t perfect since I’m still learning.</li>
         </ul>
     </section>
 
@@ -27,13 +27,13 @@ layout: layout.html
         <p class="post-text">{{ post.data.text }}</p>
         {% endif %} {%- endfor -%}
     </section>
-</section>
+</div>
 
-<section class="col">
+<div class="col">
     <section>
         {%- for art in collections.artworks reversed -%} {% if forloop.index0 == 0 %}
         <h2>Latest artwork<small class="latest-date">({{ art.data.date }})</small></h2>
         <img class="artwork" src="/img/{{ art.data.filename }}" width="400" height="500" />
         {% endif %} {%- endfor -%}
     </section>
-</section>
+</div>
