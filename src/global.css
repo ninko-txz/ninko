@@ -6,7 +6,7 @@ body {
     background: url('/img/hemp.webp');
 }
 
-@media screen and (min-width: 825px) {
+@media screen and (min-width: 1081px) {
     body {
         display: flex;
         flex-direction: column;
@@ -14,7 +14,8 @@ body {
     }
     nav,
     main {
-        width: 50%;
+        width: 70%;
+        justify-content: center;
     }
 }
 

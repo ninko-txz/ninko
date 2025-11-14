@@ -25,6 +25,7 @@ layout: layout.html
         {%- for post in collections.posts reversed -%} {% if forloop.index0 == 0 %}
         <h2>Latest blog<small class="latest-date">({{ post.data.date }})</small></h2>
         <p class="post-text">{{ post.data.text }}</p>
+        <img src="/img/{{ post.data.image }}" width="260" height="260" />
         {% endif %} {%- endfor -%}
     </section>
 </div>
@@ -32,8 +33,8 @@ layout: layout.html
 <div class="col">
     <section>
         {%- for art in collections.artworks reversed -%} {% if forloop.index0 == 0 %}
-        <h2>Latest artwork<small class="latest-date">({{ art.data.date }})</small></h2>
-        <img class="artwork" src="/img/{{ art.data.filename }}" width="400" height="500" />
+        <h2>Latest art<small class="latest-date">({{ art.data.date }})</small></h2>
+        <img class="artwork" src="/img/{{ art.data.filename }}" width="480" height="600" />
         {% endif %} {%- endfor -%}
     </section>
 </div>

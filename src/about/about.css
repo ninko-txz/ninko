@@ -1,8 +1,6 @@
 main {
     display: flex;
-    flex-wrap: wrap;
     gap: 1.5rem;
-    align-content: flex-start;
 }
 
 section {
@@ -54,5 +52,16 @@ th::after {
 
 .artwork {
     margin: 0 0 0 0.5rem;
+    padding: 0;
     border-radius: 1rem;
+}
+
+@media screen and (max-width: 1080px) {
+    main {
+        flex-wrap: wrap;
+    }
+    .artwork {
+        height: auto;
+        max-width: 97%;
+    }
 }

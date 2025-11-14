@@ -1,6 +1,5 @@
 main {
     display: flex;
-    flex-wrap: wrap;
     gap: 1.5rem;
 }
 
@@ -52,4 +51,15 @@ h2 {
 .post-text {
     margin: 0 0 1rem 0.5rem;
     padding: 0;
+    max-width: 27rem;
+}
+
+@media screen and (max-width: 1080px) {
+    main {
+        flex-wrap: wrap;
+    }
+    .artwork {
+        height: auto;
+        max-width: 97%;
+    }
 }

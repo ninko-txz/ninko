@@ -1,7 +1,6 @@
-@media screen and (max-width: 825px) {
-    main {
-        padding: 0.8rem;
-    }
+main {
+    display: flex;
+    justify-content: center;
 }
 
 img {
@@ -16,6 +15,7 @@ img {
     flex-wrap: wrap;
     margin: 0;
     padding: 0;
+    align-content: flex-start;
 }
 
 .image-li::marker {
@@ -64,4 +64,10 @@ table {
     border-radius: 1rem;
     background: rgb(255, 255, 255, 0.8);
     border: 0.01px solid rgb(204, 196, 162, 0.3);
+}
+
+@media screen and (max-width: 1080px) {
+    main {
+        padding: 0.8rem;
+    }
 }
