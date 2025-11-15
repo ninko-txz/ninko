@@ -50,6 +50,10 @@ th::after {
     content: '- ';
 }
 
+.link-a {
+    margin-right: 0.5rem;
+}
+
 .artwork {
     margin: 0 0 0 0.5rem;
     padding: 0;
