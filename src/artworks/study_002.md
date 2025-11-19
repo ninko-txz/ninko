@@ -1,6 +1,6 @@
 ---
 tags: artworks
-filename: 'study_002_v3.webp'
+filename: 'study_002_v4.webp'
 title: 'T-shirt and wrinkles'
 category: 'Study'
 date: '2025-11-19'
