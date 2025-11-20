@@ -23,6 +23,10 @@ http://localhost:8080
 # 環境構築
 $ pip install -r requirements.txt
 $ export NEOCITIES_API_KEY=xxxxxxxxxx
+$ export NEOSTAT_HOST_NAME=xxxxxx.com
+
+# ビルド
+$ npm run build
 
 # 同期状態確認
 $ npm run status

@@ -21,6 +21,7 @@ export default (config) => {
         return {
             isDevelopment: process.env.NODE_ENV == 'development',
             isProduction: process.env.NODE_ENV == 'production',
+            neostatHostName: process.env.NEOSTAT_HOST_NAME,
         };
     });
 
