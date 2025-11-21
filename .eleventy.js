@@ -26,7 +26,7 @@ export default (config) => {
     });
 
     config.addFilter('jsonify', (items) => {
-        const excludes = ['eleventyComputed', 'eleventy', 'page', 'collections', 'pkg', 'permalink'];
+        const excludes = ['eleventyComputed', 'eleventy', 'page', 'collections', 'pkg', 'permalink', 'env'];
         const payload = items.map((item) => item.data).map((data) => omit(data, excludes));
         return JSON.stringify(payload);
     });

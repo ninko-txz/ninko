@@ -25,7 +25,7 @@ layout: layout.html
         {%- for post in collections.posts reversed -%} {% if forloop.index0 == 0 %}
         <h2>Latest diary<small class="latest-date">({{ post.data.date }})</small></h2>
         <p class="post-text">{{ post.data.text }}</p>
-        <img src="/img/{{ post.data.image }}" width="260" height="260" />
+        <img class="post-image" src="/img/{{ post.data.image }}" width="260" height="260" />
         {% endif %} {%- endfor -%}
     </section>
 </div>

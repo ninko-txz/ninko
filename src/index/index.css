@@ -54,6 +54,10 @@ h2 {
     max-width: 27rem;
 }
 
+.post-image {
+    border-radius: 1rem;
+}
+
 @media screen and (max-width: 1080px) {
     main {
         flex-wrap: wrap;
