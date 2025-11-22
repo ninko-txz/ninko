@@ -59,7 +59,7 @@ export default (config) => {
         compile: passthrough,
     });
 
-    config.addTransform('事後処理:圧縮', async function (content) {
+    config.addTransform('後処理:圧縮', async function (content) {
         if ((this.page.outputPath || '').endsWith('.html')) {
             let minified = htmlmin.minify(content, {
                 collapseWhitespace: true,
