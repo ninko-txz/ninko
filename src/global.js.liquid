@@ -8,5 +8,6 @@ document.querySelectorAll('img').forEach((img) => {
     img.addEventListener('contextmenu', (ev) => ev.preventDefault());
 });
 
-document.querySelector("#package-version").textContent = '{{ pkg.version }}'
-document.querySelector("#last-modified").textContent = "{% now %}"
+document.querySelector("#package-version").textContent = "Version: {{ version }}"
+document.querySelector("#last-modified").textContent = "Last Modified: {{ buildDate }}"
+document.querySelector("#copyright").textContent = "© 2025 Ninko All Rights Reserved."

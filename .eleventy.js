@@ -9,14 +9,6 @@ export default (config) => {
     config.addPassthroughCopy('src/robots.txt');
     config.addPassthroughCopy('src/favicon.ico');
 
-    config.addShortcode('pkg', () => require('../package.json'));
-    config.addShortcode('now', () =>
-        new Date()
-            .toISOString()
-            .replace('T', ' ')
-            .replace(/\.\d+Z$/, ' GMT')
-    );
-
     config.addGlobalData('env', () => {
         return {
             isDevelopment: process.env.NODE_ENV == 'development',
@@ -25,14 +17,49 @@ export default (config) => {
         };
     });
 
+    config.addGlobalData('version', async () => {
+        const pkg = await import('./package.json', { with: { type: 'json' } });
+        return pkg.default.version;
+    });
+
+    config.addGlobalData('buildDate', () =>
+        new Date()
+            .toISOString()
+            .replace('T', ' ')
+            .replace(/\.\d+Z$/, ' GMT')
+    );
+
     config.addFilter('jsonify', (items) => {
-        const excludes = ['eleventyComputed', 'eleventy', 'page', 'collections', 'pkg', 'permalink', 'env'];
+        const excludes = [
+            'eleventyComputed',
+            'eleventy',
+            'page',
+            'collections',
+            'permalink',
+            'pkg',
+            'version',
+            'buildDate',
+            'env',
+        ];
         const payload = items.map((item) => item.data).map((data) => omit(data, excludes));
         return JSON.stringify(payload);
     });
 
-    // Liquidでパース後、 HTML圧縮
-    config.addTransform('htmlmin', function (content) {
+    // .jsファイルも11tyの処理対象とするが、Liquidは使用しない
+    config.addTemplateFormats('js');
+    config.addExtension('js', {
+        outputFileExtension: 'js',
+        compile: passthrough,
+    });
+
+    // .cssファイルも11tyの処理対象とするが、Liquidは使用しない
+    config.addTemplateFormats('css');
+    config.addExtension('css', {
+        outputFileExtension: 'css',
+        compile: passthrough,
+    });
+
+    config.addTransform('事後処理:圧縮', async function (content) {
         if ((this.page.outputPath || '').endsWith('.html')) {
             let minified = htmlmin.minify(content, {
                 collapseWhitespace: true,
@@ -44,38 +71,23 @@ export default (config) => {
             });
             return minified;
         }
-        return content;
-    });
 
-    // Liquidでパース後、JS圧縮
-    config.addTransform('jsmin', async function (content) {
         if ((this.page.outputPath || '').endsWith('.js')) {
             return (await minify(content)).code;
         }
+
+        if ((this.page.outputPath || '').endsWith('.css')) {
+            return new CleanCSS().minify(content).styles;
+        }
+
         return content;
-    });
-
-    // Liquidを介さずにCSS圧縮
-    config.addTemplateFormats('css');
-    config.addExtension('css', {
-        outputFileExtension: 'css',
-        compile: async (inputContent) => {
-            const outputContent = new CleanCSS().minify(inputContent).styles;
-            return async () => outputContent;
-        },
-    });
-
-    // Liquidを介さずにJS圧縮
-    config.addTemplateFormats('js');
-    config.addExtension('js', {
-        outputFileExtension: 'js',
-        compile: async (inputContent) => {
-            const outputContent = (await minify(inputContent)).code;
-            return async () => outputContent;
-        },
     });
 };
 
 function omit(obj, keys) {
     return Object.fromEntries(Object.entries(obj).filter(([k]) => !keys.includes(k)));
+}
+
+async function passthrough(content) {
+    return async () => content;
 }
