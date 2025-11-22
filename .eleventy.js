@@ -31,7 +31,7 @@ export default (config) => {
         return JSON.stringify(payload);
     });
 
-    // HTML圧縮
+    // Liquidでパース後、 HTML圧縮
     config.addTransform('htmlmin', function (content) {
         if ((this.page.outputPath || '').endsWith('.html')) {
             let minified = htmlmin.minify(content, {
@@ -47,7 +47,15 @@ export default (config) => {
         return content;
     });
 
-    // CSS圧縮
+    // Liquidでパース後、JS圧縮
+    config.addTransform('jsmin', async function (content) {
+        if ((this.page.outputPath || '').endsWith('.js')) {
+            return (await minify(content)).code;
+        }
+        return content;
+    });
+
+    // Liquidを介さずにCSS圧縮
     config.addTemplateFormats('css');
     config.addExtension('css', {
         outputFileExtension: 'css',
@@ -57,7 +65,7 @@ export default (config) => {
         },
     });
 
-    // JS圧縮
+    // Liquidを介さずにJS圧縮
     config.addTemplateFormats('js');
     config.addExtension('js', {
         outputFileExtension: 'js',

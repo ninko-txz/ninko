@@ -27,8 +27,8 @@
         <main>{{ content }}</main>
 
         <footer>
-            <p class="footer-p">Version: {{ pkg.version }}</p>
-            <p class="footer-p">Last Modified: {% now %}</p>
+            <p class="footer-p">Version: <span id="package-version"></span></p>
+            <p class="footer-p">Last Modified: <span id="last-modified"></span></p>
             <p class="footer-p">© 2025 Ninko All Rights Reserved.</p>
         </footer>
     </body>

@@ -1,0 +1,12 @@
+---
+permalink: global.js 
+---
+
+'use strict';
+
+document.querySelectorAll('img').forEach((img) => {
+    img.addEventListener('contextmenu', (ev) => ev.preventDefault());
+});
+
+document.querySelector("#package-version").textContent = '{{ pkg.version }}'
+document.querySelector("#last-modified").textContent = "{% now %}"
